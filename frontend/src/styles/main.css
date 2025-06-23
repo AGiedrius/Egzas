@@ -1,0 +1,19 @@
+body {
+  background: #f8fafc;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  background: #fff;
+}
+
+h1, h2 {
+  color: #1a202c;
+}

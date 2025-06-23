@@ -11,7 +11,7 @@ CREATE TABLE vartotojai (
     pavarde VARCHAR(50) NOT NULL,
     gim_data DATE NOT NULL,
     el_pastas VARCHAR(100) UNIQUE NOT NULL,
-    role VARCHAR(10) NOT NULL CHECK (role IN ('admin', 'svecias')),
+    role VARCHAR(10) NOT NULL DEFAULT 'svecias' CHECK (role IN ('admin', 'svecias')),
     patvirtintas BOOLEAN DEFAULT FALSE,
     blokuotas BOOLEAN DEFAULT FALSE,
     passworld VARCHAR(255) NOT NULL
