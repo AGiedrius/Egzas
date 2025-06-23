@@ -4,6 +4,8 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import NavBar from './components/NavBar';
 import Sveciai from './pages/Sveciai';
+import Kategorijos from './pages/Kategorijos';
+import Knygos from './pages/Knygos';
 
 function App() {
   const [vartotojas, setVartotojas] = useState(null);
@@ -49,8 +51,8 @@ function App() {
           {vartotojas && vartotojas.role === 'admin' && <>
             <Route path="/admin" element={<div>Administracinė sritis (modulis)</div>} />
             <Route path="/admin/sveciai" element={<Sveciai />} />
-            <Route path="/admin/kategorijos" element={<div>Kategorijos (bus vėliau)</div>} />
-            <Route path="/admin/knygos" element={<div>Knygos (bus vėliau)</div>} />
+            <Route path="/admin/kategorijos" element={<Kategorijos />} />
+            <Route path="/admin/knygos" element={<Knygos />} />
             <Route path="*" element={<Navigate to="/admin" />} />
           </>}
           {vartotojas && vartotojas.role === 'svecias' && <>

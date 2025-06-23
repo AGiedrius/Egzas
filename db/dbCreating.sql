@@ -23,9 +23,18 @@ CREATE INDEX IF NOT EXISTS vartotojai_elpastas_trgm_idx ON vartotojai USING gin 
 
 CREATE TABLE knygos (
     id SERIAL PRIMARY KEY,
-    kategorija_id INTEGER REFERENCES kategorijos(id),
-    autorius VARCHAR(100) NOT NULL,
+    kategorija_id INTEGER REFERENCES kategorijos(id) ON DELETE SET NULL,
     pavadinimas VARCHAR(200) NOT NULL,
+    autorius VARCHAR(100) NOT NULL,
+    isbn VARCHAR(30),
+    leidimo_metai INTEGER,
+    aprasymas TEXT
+);
+
+CREATE INDEX IF NOT EXISTS knygos_pavadinimas_trgm_idx ON knygos USING gin (pavadinimas gin_trgm_ops);
+CREATE INDEX IF NOT EXISTS knygos_autorius_trgm_idx ON knygos USING gin (autorius gin_trgm_ops);
+CREATE INDEX IF NOT EXISTS knygos_isbn_idx ON knygos (isbn);
+
     kiekis INTEGER NOT NULL
 );
 
