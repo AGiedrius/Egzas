@@ -17,6 +17,10 @@ CREATE TABLE vartotojai (
     passworld VARCHAR(255) NOT NULL
 );
 
+CREATE INDEX IF NOT EXISTS vartotojai_vardas_trgm_idx ON vartotojai USING gin (vardas gin_trgm_ops);
+CREATE INDEX IF NOT EXISTS vartotojai_pavarde_trgm_idx ON vartotojai USING gin (pavarde gin_trgm_ops);
+CREATE INDEX IF NOT EXISTS vartotojai_elpastas_trgm_idx ON vartotojai USING gin (el_pastas gin_trgm_ops);
+
 CREATE TABLE knygos (
     id SERIAL PRIMARY KEY,
     kategorija_id INTEGER REFERENCES kategorijos(id),

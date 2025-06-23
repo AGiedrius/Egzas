@@ -3,12 +3,12 @@ body {
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
 }
 
-.container {
+/* .container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+} */
 
 form {
   background: #fff;
